@@ -1,0 +1,483 @@
+* {
+    margin: 0 0;
+}
+
+ul {
+    list-style: none;
+
+}
+
+/*屏幕横向分辨率过低时使用纯文本显示，较高分辨率下隐藏这些提示文本*/
+@media screen and (min-width: 359px) {
+    .notSupported {
+        display: none;
+    }
+}
+
+.inlineUl {
+    display: inline;
+}
+
+
+div {
+    display: block;
+}
+
+.box {
+    display: block;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 实现渐变色背景 */
+body {
+    background-image: linear-gradient(-155deg, #f05d3f27, #E6E6E6);
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    font-family: "Microsoft YaHei", "SimHei", "Apple LiGothic Medium", serif;
+}
+
+#centering {
+    width: 640px;
+    margin: auto;
+    position: relative;
+}
+
+/*橙色气泡方块*/
+#backGround {
+    position: absolute;
+    top: 64px;
+    left: 48px;
+    width: 512px;
+    height: 224px;
+    background: #E64E2E;
+}
+
+/*橙色气泡方块左侧的文字无序列表*/
+#welcomeList {
+    position: absolute;
+    top: 20px;
+    left: -12px;
+    text-align: left;
+    color: azure;
+}
+
+/*颜文字设定*/
+#welcomeEmoji {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90px;
+}
+
+/*颜文字的冒号部分上偏移*/
+#welcomeEmoji1 {
+    position: absolute;
+    top: -9px;
+    font-weight: 500;
+}
+
+/*颜文字的P部分左偏移*/
+#welcomeEmoji2 {
+    position: absolute;
+    left: 65px;
+    top: 0;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+/*橙色块的汉字部分*/
+#welcomeZh {
+    font-size: 35px;
+    white-space: nowrap;
+    width: auto;
+    position: absolute;
+    top: 100px;
+    font-weight: 100;
+}
+
+/*橙色块的英文部分*/
+#welcomeEn {
+    font-size: 20px;
+    white-space: nowrap;
+    width: auto;
+    position: absolute;
+    top: 150px;
+    font-weight: 100;
+}
+
+/*对话框的左下小三角*/
+#triLeft {
+    position: absolute;
+    top: 288px;
+    left: 80px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: #E64E2E transparent;
+    border-width: 48px 48px 0 0;
+}
+
+#triRight {
+    position: absolute;
+    top: 288px;
+    left: 592px;
+    border-color: transparent #CCCCCC;
+    border-width: 16px 0 0 16px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/*显示信息的灰色块*/
+#infoBox {
+    position: absolute;
+    top: 96px;
+    left: 176px;
+    padding: 32px;
+    width: 352px;
+    height: 208px;
+    background: #F2F2F2;
+    display: block;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*最下方的阴影部分使用css实现*/
+#shadow {
+    position: relative;
+    top: 133%;
+    left: 7%;
+    width: 512px;
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0.07);
+    display: block;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0 0 12px 8px rgba(0, 0, 0, 0.07);
+}
+
+#userName {
+    color: #E64E2E;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 34px;
+    font-weight: lighter;
+}
+
+/* 绘制断开连接按钮 */
+#buttonBox {
+    position: relative;
+    top: 304px;
+    left: 400px;
+    width: 208px;
+    height: 80px;
+    background: #FFFFFF;
+}
+
+#disconnectedBtn {
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin: 16px;
+    width: 174px;
+    height: 46px;
+    border: #B2AABE solid 1px;
+    background: #C0BDCC;
+    overflow: hidden;
+    font-family: "Microsoft YaHei", "SimHei", "Apple LiGothic Medium", serif;
+}
+
+#disconnectedBtn:hover {
+    background-color: #D6D2E0;
+    background-position: center -47px;
+}
+
+#disconnectedBtn:active {
+    background-color: #B1AAC4;
+    background-position: center -47px;
+}
+
+#disconnectedZh {
+    color: #33323E;
+    font-size: 20px;
+}
+
+#disconnectedEn {
+    font-size: 17px;
+    color: #62606E;
+    position: relative;
+    top: -5px;
+}
+
+/* 中央左侧提示文本 */
+#connectStatus {
+    clear: left;
+    float: left;
+    width: 56px;
+    height: 32px;
+    margin-top: 12px;
+    text-align: right;
+    font-size: 13px;
+}
+
+#connectDuration {
+    position: relative;
+    top: -35px;
+    clear: left;
+    float: left;
+    width: 56px;
+    height: 32px;
+    margin-top: 22px;
+    text-align: right;
+    font-size: 13px;
+    color: #303030;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+#connectTime {
+    position: relative;
+    top: -58px;
+    left: 4px;
+    float: left;
+    color: #EC6677;
+    margin: 24px 0 0 20px;
+    padding-top: 4px;
+    height: 28px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: lighter;
+}
+
+#dataUsedZh {
+    position: relative;
+    top: -49px;
+    clear: left;
+    float: left;
+    width: 56px;
+    height: 32px;
+    margin-top: 22px;
+    text-align: right;
+    font-size: 13px;
+}
+
+#dataUsedEn {
+    position: relative;
+    top: -85px;
+    clear: left;
+    float: left;
+    width: 56px;
+    height: 32px;
+    margin-top: 22px;
+    text-align: right;
+    font-size: 13px;
+    color: #303030;
+}
+
+/* 以下部分用于绘制流量使用量表 */
+#usageBar {
+    position: relative;
+    top: -157px;
+    left: 60px;
+    float: left;
+    margin: 24px 0 0 16px;
+    padding: 0;
+    width: 320px;
+    height: 32px;
+}
+
+#calibration {
+    position: absolute;
+    display: inline;
+    top: -18px;
+    right: 60px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 13px;
+    color: #969696;
+}
+
+#usageBar .colorBlock {
+    position: relative;
+    z-index: 1;
+    float: left;
+    left: -35px;
+    width: 50px;
+    height: 32px;
+}
+
+#blocka {
+    background-color: #FBB03B;
+}
+
+#blockb {
+    background-color: #d8d8d8;
+}
+
+#blockc {
+    background-color: #E7E3E4;
+}
+
+#blockd {
+    background-color: #DBD5D7;
+}
+
+#blocke {
+    background-color: #CFC8CB;
+}
+
+#usageNum {
+    position: relative;
+    top: -30px;
+    margin-left: 12px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #5C5C5C;
+    font-size: 24px;
+    z-index: 2;
+}
+
+#usageBar .strike {
+    float: left;
+    width: 4px;
+    height: 32px;
+    background-color: #A29B9E;
+}
+
+#strikea {
+    position: relative;
+    right: 32px;
+}
+
+#strikeb {
+    position: relative;
+    right: 28px;
+}
+
+/* 右下角的四个相关链接 */
+#linkList {
+    position: absolute;
+    top: 390px;
+    right: 32px;
+    width: 234px;
+}
+
+#linkList li {
+    float: left;
+}
+
+#linkList li a {
+    display: block;
+    padding: 16px 5px 0 26px;
+    height: 16px;
+    color: #AD3B23;
+    text-decoration: none;
+    font-size: 11px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+#linkList li:hover {
+    text-decoration: underline;
+}
+
+#link_info {
+    background: url(../image/popup_info.gif) no-repeat 2px 2px;
+}
+
+#link_lib {
+    background: url(../image/popup_lib.gif) no-repeat 2px 2px;
+}
+
+#link_learn {
+    background: url(../image/popup_learn.gif) no-repeat 2px 2px;
+}
+
+#link_mail {
+    background: url(../image/popup_mail.gif) no-repeat 2px 2px;
+}
+
+/*适配360-600横向像素的设备*/
+@media screen and (max-width: 600px) {
+    #shadow {
+        display: none;
+    }
+
+    #backGround {
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        width: 416px;
+        height: 224px;
+        background: #E64E2E;
+    }
+
+    #welcomeList {
+        top: 0;
+        float: left;
+    }
+
+    #welcomeZh {
+        top: 20px;
+        left: 140px;
+    }
+
+    #welcomeEn {
+        top: 25px;
+        left: 250px;
+        font-size: 30px;
+    }
+
+    #triLeft {
+        display: none;
+    }
+
+    #triRight {
+        display: none;
+    }
+
+    #infoBox {
+        left: 5px;
+    }
+
+    #linkList {
+        position: relative;
+        top: 320px;
+        left: 40px;
+    }
+
+    #linkList li {
+        margin: 10px 5px;
+    }
+
+    #linkList li a {
+        font-size: 30px;
+    }
+
+    #link_lib {
+        margin-left: 26px;
+    }
+
+    #buttonBox {
+        left: 103px;
+    }
+}
+
+/*360px以下以纯文字显示*/
+@media screen and (max-width: 359px) {
+    #centering {
+        display: none;
+    }
+
+    .notSupported {
+        left: 0;
+        visibility: visible;
+        text-align: left;
+        z-index: 10;
+        font-size: 20px;
+        color: #303030;
+    }
+
+    #textDisconnet {
+        color: #E64E2E;
+        text-decoration: underline;
+    }
+}
